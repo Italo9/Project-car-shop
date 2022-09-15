@@ -1,7 +1,10 @@
 export interface IModel<T> {
-  create(obj:T):Promise<T>,
-  read(): Promise<T[]>,
-  readOne(generecString:string):Promise<T | null>,
-  update(generecString:string, obj:T):Promise<T | null>,
-  delete(generecString: string): Promise<T | null>
+  interface IService<T> {
+    create(obj: T): Promise<T>,
+    readOne(_id: string): Promise<T>,
+    update(id: string, body: T): Promise<T | null>
+  }
+  
+  export default IService;
+  
 }
