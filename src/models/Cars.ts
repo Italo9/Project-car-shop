@@ -14,10 +14,10 @@ const frameMongooseSchema = new Schema<ICar>({
   seatsQty: number,
 });
 
-class Frame extends MongoModel<ICar> {
+class Car extends MongoModel<ICar> {
   constructor(model = mongooseCreateModel('Frame', frameMongooseSchema)) {
     super(model);
   }
 }
 
-export default Frame;
+export default Car;
