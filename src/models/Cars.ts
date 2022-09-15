@@ -1,21 +1,19 @@
-import { number, string } from 'joi';
 import { model as mongooseCreateModel, Schema } from 'mongoose';
-import { boolean } from 'zod';
 import { ICar } from '../interfaces/ICar';
 import MongoModel from './MongoModel';
 
-const frameMongooseSchema = new Schema<ICar>({
-  model: string,
-  year: number,
-  color: string,
-  status: boolean,
-  buyValue: number, 
-  doorsQty: number,
-  seatsQty: number,
-});
+const carMongooseSchema = new Schema<ICar>({
+  model: String,
+  year: Number,
+  color: String,
+  status: Boolean,
+  buyValue: Number, 
+  doorsQty: Number,
+  seatsQty: Number,
+}, { versionKey: false });
 
 class Car extends MongoModel<ICar> {
-  constructor(model = mongooseCreateModel('Frame', frameMongooseSchema)) {
+  constructor(model = mongooseCreateModel('Cars', carMongooseSchema)) {
     super(model);
   }
 }
