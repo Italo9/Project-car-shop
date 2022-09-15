@@ -17,5 +17,7 @@ route.get('/cars/:id', (req: Request, res: Response) =>
   carsController.readOne(req, res));
 route.put('/cars/:id', (req: Request, res: Response) =>
   carsController.update(req, res));
+route.delete('/cars/:id', (req: Request, res: Response) =>
+  carsController.delete(req, res));
 
 export default route;

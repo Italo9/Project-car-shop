@@ -39,7 +39,10 @@ class CarsService implements IService<ICar> {
   }
 
   public async delete(generecString: string): Promise< ICar | null> {
-    return this.delete(generecString);
+    await this.readOne(generecString);
+    if (!generecString) throw new Error(ErrorTypes.ErrorNotFound);
+    this.delete(generecString);
+    return null;
   }
 }
 
