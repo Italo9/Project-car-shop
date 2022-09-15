@@ -1,17 +1,17 @@
-import IService from '../interfaces/IService';
-import IFrame, { FrameZodSchema } from '../interfaces/Frame';
-import IModel from '../interfaces/IModel';
-import { ErrorTypes } from '../errors/catalog';
+import { IService } from '../interfaces/IService';
+import { ICar, CarZodSchema } from '../interfaces/ICar';
+import { IModel } from '../interfaces/IModel';
+// import { ErrorTypes } from '../errors/catalog';
 
-class CarsService implements IService<IFrame> {
-  private _frame: IModel<IFrame>;
+class CarsService implements IService<ICar> {
+  private _frame: IModel<ICar>;
 
-  constructor(model: IModel<IFrame>) {
+  constructor(model: IModel<ICar>) {
     this._frame = model;
   }
 
-  public async create(obj: IFrame): Promise<IFrame> {
-    const parsed = FrameZodSchema.safeParse(obj);
+  public async create(obj: ICar): Promise<ICar> {
+    const parsed = CarZodSchema.safeParse(obj);
     if (!parsed.success) {
       throw parsed.error;
     }
