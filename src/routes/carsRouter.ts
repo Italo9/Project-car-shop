@@ -1,13 +1,9 @@
 import { Router, Request, Response } from 'express';
-import CarsController from '../controllers/Cars';
-import CarsModel from '../models/Cars';
-import CarsService from '../services/Cars';
+import CreateCarsControllerFactory from '../factories/CreateCarsControllerFactory';
 
 const route = Router();
 
-const cars = new CarsModel();
-const carsService = new CarsService(cars);
-const carsController = new CarsController(carsService);
+const carsController = CreateCarsControllerFactory.make();
 
 route.post('/cars', (req: Request, res: Response) =>
   carsController.create(req, res));

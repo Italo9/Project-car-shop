@@ -1,13 +1,9 @@
 import { Router, Request, Response } from 'express';
-import MotorcyclesController from '../controllers/Motorcycles';
-import MotorcyclesModel from '../models/Motorcycles';
-import MotorcyclesService from '../services/Motorcycles';
+import CreateMotorcyclesControllerFactory from '../factories/CreateMotorcyclesControllerFactory';
 
 const route = Router();
 
-const motorcycles = new MotorcyclesModel();
-const motorcyclesService = new MotorcyclesService(motorcycles);
-const motorcyclesController = new MotorcyclesController(motorcyclesService);
+const motorcyclesController = CreateMotorcyclesControllerFactory.make();
 
 const MOTORCYCLE_URL = '/motorcycles';
 route.post(MOTORCYCLE_URL, (req: Request, res: Response) =>
