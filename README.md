@@ -13,7 +13,7 @@ Além de tudo isso, tornou-se constante uma reflexão na construção do projeto
 - Treinar a utilização de Composição;
 - Realizar a criação e utilização de Interfaces;
 - Implementar, em TypeScript: Classes, Instâncias, Atributos, Métodos e Objetos;
-- Aplicar os conhecimentos de MongoDB, Typescript e POO para criar uma API com CRUD.
+- Aplicar os conhecimentos de MongoDB, Typescript, SOLID e POO para criar uma API com CRUD.
 
 
 ## Como usar
