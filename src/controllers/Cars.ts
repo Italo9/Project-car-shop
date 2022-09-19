@@ -43,7 +43,7 @@ export default class CarsController {
     req: Request,
     res: Response<ICar | null>,
   ) {
-    const result = await this._service.delete(req.params.id);
-    return !result && res.status(204).end();
+    await this._service.delete(req.params.id);
+    return res.status(204).end();
   }
 }

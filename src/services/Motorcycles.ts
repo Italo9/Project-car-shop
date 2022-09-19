@@ -34,15 +34,17 @@ class MotorcyclesService implements IService<IMotorcycle> {
     if (!parsed.success) {
       throw parsed.error;
     }
-    await this.readOne(generecString);
+    const motorcycle = await this._motorcycles.readOne(generecString);
+    if (!motorcycle) throw new Error(ErrorTypes.ErrorNotFound);
+    await this._motorcycles.readOne(generecString);
     return this._motorcycles.update(generecString, obj);
   }
 
   public async delete(generecString: string): Promise< IMotorcycle | null> {
-    await this.readOne(generecString);
-    if (!generecString) throw new Error(ErrorTypes.ErrorNotFound);
-    this.delete(generecString);
-    return null;
+    const motorcycle = await this._motorcycles.readOne(generecString);
+    if (!motorcycle) throw new Error(ErrorTypes.ErrorNotFound);
+   
+    return this._motorcycles.delete(generecString);
   }
 }
 

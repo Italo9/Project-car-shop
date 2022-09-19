@@ -34,15 +34,16 @@ class CarsService implements IService<ICar> {
     if (!parsed.success) {
       throw parsed.error;
     }
-    await this.readOne(generecString);
+    const car = await this._car.readOne(generecString);
+    if (!car) throw new Error(ErrorTypes.ErrorNotFound);
     return this._car.update(generecString, obj);
   }
 
   public async delete(generecString: string): Promise< ICar | null> {
-    await this.readOne(generecString);
-    if (!generecString) throw new Error(ErrorTypes.ErrorNotFound);
-    this.delete(generecString);
-    return null;
+    const car = await this._car.readOne(generecString);
+    if (!car) throw new Error(ErrorTypes.ErrorNotFound);
+
+    return this._car.delete(generecString);
   }
 }
 
