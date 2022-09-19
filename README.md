@@ -9,7 +9,7 @@ No que se refere a modelagem de software, percebe-se a vastidão de metodologias
 Além de tudo isso, tornou-se constante uma reflexão na construção do projeto: "será que essa é a melhor forma de fazer isso?", e foi através desse questionamento que fixei de maneira mais coesa e elaborada todos os conhecimentos necessários para aderência do código à especificação, organização do código e, por fim, a qualidade e a cobertura de 100% dos testes unitários.
 ## Objetivos
 
-- Exercitar o conhecimento dos pilares da Programação Orientada a Objetos: Herança, Abstração, Encapsulamento e Polimorfismo;
+- Exercitar o conhecimento dos pilares da Programação Orientada a Objetos: Herança (capacidade de herdar), Abstração (não exibição do funcionamento interno da classe), Encapsulamento (disponibiliza apenas os atributos e métodos que são necessários) e Polimorfismo (métodos implementados, mas que não necessariamente se comportam da mesma forma);
 - Treinar a utilização de Composição;
 - Realizar a criação e utilização de Interfaces;
 - Implementar, em TypeScript: Classes, Instâncias, Atributos, Métodos e Objetos;
